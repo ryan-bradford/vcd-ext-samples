@@ -6,7 +6,7 @@ import { VcdApiClient, VcdSdkModule } from "@vcd/sdk";
 import { ExtensionNavRegistration, EXTENSION_ROUTE } from "@vcd/sdk/common";
 import { PluginModule } from "@vcd/sdk/core";
 import { TranslateService } from "@vcd/sdk/i18n";
-import { ClarityModule } from "clarity-angular";
+import { ClarityModule } from "@clr/angular";
 import { AboutComponent } from "./subnav/about.component";
 import { StatusComponent } from "./subnav/status.component";
 import { SubnavComponent } from "./subnav/subnav.component";

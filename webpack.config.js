@@ -45,6 +45,7 @@ module.exports = {
         /^@ngrx\/.+$/,
         /^@vcd\/common$/,
         /^@vcd-ui\/common$/,
+        /^@vcd\/ui-components$/,
         {
           'clarity-angular': 'clarity-angular',
           'reselect': 'reselect'
