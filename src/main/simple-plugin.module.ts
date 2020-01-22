@@ -10,7 +10,6 @@ import { ClarityModule } from "@clr/angular";
 import { SimpleComponent } from "./simple/simple.component";
 import { I18nModule, PLUGIN_TRANSLATION_SERVICE } from "./translation/I18n.module";
 import { TranslationService, BOOTSTRAP_DETAILS } from "@vcd/ui-components";
-import { TRANSLATIONS } from "./translation/translations";
 import { DataExporterExamplesModule } from "./test/data-exporter.examples.module";
 
 const ROUTES: Routes = [
@@ -31,16 +30,13 @@ const ROUTES: Routes = [
     ],
     bootstrap: [SimpleComponent],
     exports: [],
-    providers: [VcdApiClient, {
-        provide: BOOTSTRAP_DETAILS,
-        useValue: {locale: 'en'}
-    }]
+    providers: [VcdApiClient]
 })
 export class SimplePluginModule extends PluginModule {
     constructor(appStore: Store<any>, @Inject(EXTENSION_ROUTE) extensionRoute: string, translate: TranslateService,
     @Inject(PLUGIN_TRANSLATION_SERVICE) pluginTranslate: TranslationService) {
         super(appStore, translate);
-        pluginTranslate.registerTranslations(TRANSLATIONS)
+        pluginTranslate.registerTranslations()
         this.registerExtension(<ExtensionNavRegistration>{
             path: extensionRoute,
             icon: "page",
